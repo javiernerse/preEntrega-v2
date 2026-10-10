@@ -18,6 +18,7 @@
 }
 
 html {
+    background-color: var(--color-primary);
    font-size: 15px;
    font-family: var(--family-font);
 }
@@ -218,15 +219,33 @@ header {
    }
 }
 
-.formulario{
-    margin-top: 10px;
-    border:1px solid black;
-    
+
+.formulario {
+    margin-top: 20px;
+    border: 1px solid black;
+    padding: 20px;
     display: flex;
- justify-content: center;
-    background-color: var(--color-primary)
+    justify-content: center;
+    background-color: var(--color-primary);
 }
 
+/* Estructura con CSS Grid para el formulario */
+.formulario form {
+    display: grid;
+    /* Creamos 2 columnas: una para el texto de la etiqueta y otra para el campo */
+    grid-template-columns: max-content 1fr;
+    gap: 15px; /* Espacio automático entre filas y columnas, adiós a los <br> */
+    align-items: center; /* Alinea verticalmente los elementos */
+    width: 100%;
+    max-width: 400px; /* Ancho máximo opcional para que no se extienda demasiado */
+}
+
+/* Hacemos que el botón de enviar ocupe las dos columnas para que quede centrado o ancho */
+.formulario form button {
+    grid-column: 1 / -1;
+    justify-self: center; /* Centra el botón horizontalmente */
+    padding: 10px 20px;
+}
 .header_resenia{
     background-color: var(--color-primary);
 }
